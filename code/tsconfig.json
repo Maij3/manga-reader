@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
+    "types": ["react", "react-dom", "react-router-dom"],
     "paths": {
       "@core/*":["./src/core/*"],
     }, 
