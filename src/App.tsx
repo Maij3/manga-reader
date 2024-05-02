@@ -1,9 +1,11 @@
+import { AppTheme } from "@core/theme"
+import { Typography } from "@mui/material"
 
 function App() {
   return (
-    <div>
-      <h1>Reader</h1>
-    </div>
+    <AppTheme>
+     <Typography variant="h1">App</Typography> 
+    </AppTheme>
   )
 }
 
