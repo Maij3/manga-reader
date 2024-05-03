@@ -1,10 +1,13 @@
+import MainLayout  from "@core/components/mainLayout"
 import { AppTheme } from "@core/theme"
 import { Typography } from "@mui/material"
 
 function App() {
   return (
     <AppTheme>
-     <Typography variant="h1">App</Typography> 
+      <MainLayout>
+        <Typography variant="h3">App</Typography>
+      </MainLayout>
     </AppTheme>
   )
 }
