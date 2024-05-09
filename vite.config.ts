@@ -4,8 +4,7 @@ import path from 'node:path';
 
 export default defineConfig({
  plugins: [react()],
-  base: "/manga-reader/",
-  resolve: {
+ resolve: {
     alias: {
       "@core": path.resolve(__dirname, "./src/core")
     }
