@@ -1,10 +1,13 @@
 import { Box, Divider, Drawer, Toolbar, Typography } from "@mui/material";
 import { NavBarItemMenu } from "@core/components/navBar/itemMenu";
+import { useContext } from "react";
+import { UIContext } from "@core/context/ui/UIContext";
 
 type TSideBar = {
   drawerWidth: number;
 }
 function SideBar({ drawerWidth }: TSideBar) {
+  const { sideIsOpen , setIsOpen } = useContext(UIContext)
   return (
     <Box component='nav' sx={{
       width: {
@@ -14,11 +17,10 @@ function SideBar({ drawerWidth }: TSideBar) {
       display: { xs: "none", sm: "none", xl: "block" },
     }}>
       <Drawer
-        open={true}
-        anchor="left"
+        open={sideIsOpen}
+        onClose={setIsOpen}
+        anchor="right"
         transitionDuration={{ enter: 800, exit: 800 }}
-        variant="permanent"
-        hideBackdrop={true}
         sx={{
           display: 'block',
           "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },

@@ -1,17 +1,21 @@
+import { UIContext } from "@core/context/ui/UIContext"
 import { LogoutOutlined, MenuOutlined } from "@mui/icons-material"
 import { AppBar, Container, Grid, IconButton, Toolbar, Typography } from "@mui/material"
+import { useContext } from "react"
 
 type TNavbar = {
   drawerWidth: number
 }
 
 function Navbar({ drawerWidth }: TNavbar) {
+  const { setIsOpen } = useContext(UIContext)
+
   return (
     <Container>
     <AppBar
       position="fixed"
       sx={{
-        width: { xl: `calc(100% - ${drawerWidth}px)` },
+        width: { xl: `100%` },
         ml: { sm: `${drawerWidth}px` },
       }}
     >
@@ -19,7 +23,8 @@ function Navbar({ drawerWidth }: TNavbar) {
         <IconButton
           color="inherit"
           edge="start"
-          sx={{ mr: 2, display: {  xl: "none" } }}
+          sx={{ mr: 2 }}
+          onClick={setIsOpen}
         >
           <MenuOutlined />
         </IconButton>
